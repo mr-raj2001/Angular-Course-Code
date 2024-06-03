@@ -12,5 +12,5 @@ export class TasksComponent {
   //   this.selectedUserId = id;
   // } so i am taking that input then sending it to html
 
-  @Input({ required: true }) name!: string;
+  @Input({}) name?: string;
 }
