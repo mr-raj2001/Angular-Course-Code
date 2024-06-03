@@ -1,8 +1,8 @@
 <app-header></app-header>
 <main>
   <ul id="users">
-    <li>
-      <app-user [user]="users[0]" (select)="onSelectedUser($event)"></app-user>
+    <!-- <li>
+      <app-user [user]="us</li>ers[0]" (select)="onSelectedUser($event)"></app-user>
     </li>
     <li>
       <app-user [user]="users[1]" (select)="onSelectedUser($event)"></app-user>
@@ -12,7 +12,18 @@
     </li>
     <li>
       <app-user [user]="users[3]" (select)="onSelectedUser($event)"></app-user>
+    </li> -->
+    @for (user of users; track user.id){
+    <li>
+      <app-user [user]="user" (select)="onSelectedUser($event)"></app-user>
     </li>
+    }
   </ul>
+
+  @if(selectedUsername){
   <app-tasks [name]="selectedUsername.name"></app-tasks>
+
+  } @else {
+  <p id="fallback">Select a user for task</p>
+  }
 </main>
